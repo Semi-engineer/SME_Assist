@@ -1,0 +1,34 @@
+# --- Virtual Environment ---
+# ไม่ต้องเก็บ Folder ของ Environment เพราะแต่ละเครื่องจะสร้างใหม่เอง
+.venv/
+venv/
+ENV/
+
+# --- Python Cache Files ---
+# ไฟล์ที่ Python สร้างขึ้นมาเองตอนรันโปรแกรม
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Database File ---
+# ไม่ควรเก็บไฟล์ฐานข้อมูลลงใน Git เพราะข้อมูลอาจเปลี่ยนแปลงบ่อย
+*.db
+*.sqlite
+*.sqlite3
+
+# --- IDE and Editor specific files ---
+# ไฟล์ตั้งค่าของโปรแกรมเขียนโค้ด
+.vscode/
+.idea/
+
+# --- Build artifacts ---
+# โฟลเดอร์ที่เกิดจากการ build โปรแกรมเป็น .exe
+dist/
+build/
+*.spec
+
+# --- OS specific files ---
+# ไฟล์ขยะที่สร้างโดยระบบปฏิบัติการ
+.DS_Store
+Thumbs.db
