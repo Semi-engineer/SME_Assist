@@ -1,0 +1,92 @@
+/* You can use a Thai web font for better rendering */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.company-info h1 {
+    margin: 0;
+    color: #007bff;
+}
+
+.quote-info {
+    text-align: right;
+}
+
+.quote-info h2 {
+    margin: 0;
+}
+
+h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th.cost, td.cost {
+    text-align: right;
+}
+
+.summary {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notes {
+    width: 45%;
+}
+
+.totals {
+    width: 45%;
+}
+
+.totals table td:first-child {
+    font-weight: bold;
+    border: none;
+}
+.totals table td:last-child {
+    text-align: right;
+    border: none;
+}
+
+.grand-total td {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    border-top: 2px solid #007bff !important;
+    padding-top: 10px !important;
+}
+
+pre {
+    font-family: 'Sarabun', sans-serif;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

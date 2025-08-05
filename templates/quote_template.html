@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ใบเสนอราคา</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="company-info">
+            <h1>ชื่อบริษัทของคุณ</h1>
+            <p>ที่อยู่บริษัท, เบอร์โทร, อีเมล</p>
+            <p>เลขประจำตัวผู้เสียภาษี</p>
+        </div>
+        <div class="quote-info">
+            <h2>ใบเสนอราคา</h2>
+            <p><strong>เลขที่:</strong> {{ quote_id }}</p>
+            <p><strong>วันที่:</strong> {{ date }}</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="customer-info">
+            <h3>ข้อมูลลูกค้า</h3>
+            <p><strong>ชื่องาน:</strong> {{ job_name }}</p>
+            <p><strong>ชื่อลูกค้า:</strong> {{ customer_name }}</p>
+        </section>
+
+        <section class="operations-table">
+            <h3>รายการ</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="id">#</th>
+                        <th class="desc">รายละเอียด</th>
+                        <th class="details">ข้อมูล</th>
+                        <th class="cost">ราคา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for op in operations %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ op.desc }}</td>
+                        <td>{{ op.details }}</td>
+                        <td class="cost">{{ "%.2f"|format(op.cost) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="summary">
+            <div class="notes">
+                <h4>หมายเหตุ:</h4>
+                <pre>{{ notes }}</pre>
+            </div>
+            <div class="totals">
+                <table>
+                    <tr>
+                        <td>จำนวน</td>
+                        <td>{{ quantity }} ชิ้น</td>
+                    </tr>
+                    <tr>
+                        <td>ราคารวมค่าแรง (ต่อชิ้น)</td>
+                        <td>{{ "%.2f"|format(total_labor_cost_per_unit) }} บาท</td>
+                    </tr>
+                    <tr>
+                        <td>ราคาวัสดุ (ต่อชิ้น)</td>
+                        <td>{{ "%.2f"|format(material_cost_per_unit) }} บาท</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td>ราคารวม (ยังไม่รวมกำไร)</td>
+                        <td>{{ "%.2f"|format(sub_total) }} บาท</td>
+                    </tr>
+                    <tr class="profit">
+                        <td>กำไร ({{ profit_margin_percent }}%)</td>
+                        <td>{{ "%.2f"|format(profit) }} บาท</td>
+                    </tr>
+                    <tr class="grand-total">
+                        <td>ยอดรวมสุทธิ</td>
+                        <td>{{ "%.2f"|format(final_price) }} บาท</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
